@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_graph"
+        app:startDestination="@id/action_home">
+
+    <fragment
+            android:id="@+id/action_home"
+            android:icon="@drawable/ic_home_24"
+            android:name="com.tinysoft.pokemon.fragments.PokemonListFragment"
+            tools:layout="@layout/fragment_pokemon_list" />
+
+    <fragment
+            android:id="@+id/detailsFragment"
+            android:name="com.tinysoft.pokemon.fragments.PokemonDetailsFragment"
+            tools:layout="@layout/fragment_pokemon_details" >
+        <argument
+                android:name="extra_pokemon"
+                app:argType="com.tinysoft.pokemon.db.Pokemon" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/searchFragment"
+            android:name="com.tinysoft.pokemon.fragments.SearchFragment"
+            tools:layout="@layout/fragment_search" />
+</navigation>

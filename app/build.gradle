@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -29,6 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -36,7 +43,45 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    def koin_ver = "3.2.0"
+    implementation "io.insert-koin:koin-core:$koin_ver"
+    implementation "io.insert-koin:koin-android:$koin_ver"
+
+    def lifecycle_ver = "2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_ver"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_ver"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_ver"
+
+    def kotlin_coroutines_ver = "1.6.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_ver"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_ver"
+
+    def retrofit_ver = '2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_ver"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_ver"
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    def room_ver = '2.4.3'
+    implementation "androidx.room:room-runtime:$room_ver"
+    kapt "androidx.room:room-compiler:$room_ver"
+    implementation "androidx.room:room-ktx:$room_ver"
+
+    implementation "androidx.navigation:navigation-runtime-ktx:${rootProject.ext.nav_ver}"
+    implementation "androidx.navigation:navigation-fragment-ktx:${rootProject.ext.nav_ver}"
+    implementation "androidx.navigation:navigation-ui-ktx:${rootProject.ext.nav_ver}"
+
+    def glide_ver = '4.13.2'
+    implementation "com.github.bumptech.glide:glide:$glide_ver"
+    kapt "com.github.bumptech.glide:compiler:$glide_ver"
+
+    testImplementation "io.insert-koin:koin-test:$koin_ver"
     testImplementation 'junit:junit:4.13.2'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }

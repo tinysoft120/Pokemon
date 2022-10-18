@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.PokemonDetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Toolbar"
+                android:background="?attr/colorSurface"
+                app:navigationIcon="@drawable/ic_arrow_back_24" >
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAppearance="@style/TextViewHeadline6"
+                    android:textStyle="bold"
+                    tools:text="Title"/>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:overScrollMode="never"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/imageCoverContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintWidth_percent="0.6"
+                    app:cardCornerRadius="12dp"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/coverImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:transitionName="@string/transition_poke_image"
+                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/pokemonIDText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageCoverContainer"
+                    tools:text="Pokemon ID: 1" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/heightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/pokemonIDText"
+                    tools:text="Height: 1.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/weightText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/heightText"
+                    tools:text="Weight: 1.0" />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/type1Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/weightText"
+                    tools:text="Type1: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/type2Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/type1Text"
+                    tools:text="Type2: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/attackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/type2Text"
+                    tools:text="Attack: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/defenseText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/attackText"
+                    tools:text="Defense: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/spAttackText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/defenseText"
+                    tools:text="Special Attack: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/spDefenseText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/spAttackText"
+                    tools:text="Special Defense: " />
+
+            <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/speedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:minWidth="40dp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextViewBody1"
+                    android:textColor="?android:attr/textColorSecondary"
+                    app:layout_constraintStart_toStartOf="@+id/pokemonIDText"
+                    app:layout_constraintTop_toBottomOf="@+id/spDefenseText"
+                    tools:text="Speed: " />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

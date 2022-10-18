@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Pokemon</string>
+    <string name="no_results">No results</string>
+    <string name="action_search">Search</string>
+    <string name="action_grid_size">Grid size</string>
+    <string name="action_sort_order">Sort order</string>
+    <string name="action_order_by_num">Order by number</string>
+    <string name="action_order_by_name">Order by name</string>
+    <string name="action_order_by_type">Order by type</string>
+    <string name="transition_poke_image" translatable="false">poke_image_transition</string>
 </resources>

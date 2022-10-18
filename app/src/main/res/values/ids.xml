@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_sort_order_number" type="id" />
+    <item name="action_sort_order_name" type="id" />
+    <item name="action_sort_order_type" type="id" />
+</resources>
