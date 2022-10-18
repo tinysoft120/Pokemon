@@ -1,5 +1,8 @@
 package com.tinysoft.pokemon.network
 
+/**
+ * Network Result Wrapper Class
+ */
 sealed class ResultWrapper<out T> {
     object Loading: ResultWrapper<Nothing>()
     data class Success<out T>(val value: T): ResultWrapper<T>()

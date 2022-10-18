@@ -13,17 +13,62 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import java.util.*
 
+/**
+ * A Repository is an interface that abstracts access to network and room database data sources.
+ */
 interface Repository {
+    /**
+     * Get Pokemon details information via rest api.
+     * Return result wrapper for Pokemon details.
+     * This method is suspendable synchronous.
+     * @param index Pokemon index
+     */
     suspend fun getPokemonInfo(index: Int) : ResultWrapper<PokemonDetails>
 
+    /**
+     * Get all Pokemon data from local databases.
+     * Return list of [Pokemon] as a Flow.
+     */
     fun getCachePokemonAll(): Flow<List<Pokemon>>
+
+    /**
+     * Get all Pokemon data from local databases.
+     * Return list of [Pokemon] sorted by order settings.
+     * This method is synchronous.
+     */
     suspend fun getCacheSortedPokemon(): List<Pokemon>
+
+    /**
+     * Get a specific Pokemon data from local databases by ID.
+     * Return [Pokemon] directly.
+     * @param pokemonId Pokemon ID
+     */
     suspend fun getCachePokemon(pokemonId: Int): Pokemon?
+
+    /**
+     * Get all Pokemon data from local databases without sorting.
+     * Return list of [Pokemon] as a Flow.
+     * This method is synchronous.
+     */
     suspend fun getCurrentPokemonList(): List<Pokemon>
+
+    /**
+     * Insert Pokemon from api [PokemonDetails] into Database.
+     * @param details Pokemon details from api
+     */
     suspend fun insertPokemonDetails(details: PokemonDetails)
+
+    /**
+     * Search by query in name list of Pokemon
+     * This method is synchronous.
+     * @param query Search keyword
+     */
     suspend fun getPokemonListBySearch(query: String): List<Pokemon>
 }
 
+/**
+ * Implementation class of Repository
+ */
 class RepositoryImpl(
     private val apiService: RestApiService,
     private val pokemonDao: PokemonDao

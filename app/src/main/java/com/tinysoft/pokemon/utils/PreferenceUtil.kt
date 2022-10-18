@@ -11,6 +11,9 @@ import com.tinysoft.pokemon.helper.SortOrder
 object PreferenceUtil {
     private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.getContext())
 
+    /**
+     * Order type of Pokemon list
+     */
     var listSortOrder: SortOrder
         get() {
             val id: Int = sharedPreferences.getInt(LIST_SORT_ORDER, 0)
@@ -23,6 +26,9 @@ object PreferenceUtil {
         }
         set(value) = sharedPreferences.edit { putInt(LIST_SORT_ORDER, value.id) }
 
+    /**
+     * Grid Size of Pokemon list
+     */
     var listGridSize: Int
         get() = sharedPreferences.getInt(
             LIST_GRID_SIZE,

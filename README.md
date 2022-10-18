@@ -23,3 +23,19 @@
 ### Constraints
 1. Kotlin is preferred, but Java is okay
 2. The Pokemon API can be found at https://urldefense.proofpoint.com/v2/url?u=https-3A__pokeapi.co&d=DwIGAg&c=BioHiDP8cpFFEOWoiyRJQw&r=TeMOPcRpSJyi2C5Mnu2bi2m-0UAXpWDSlPEnjqb9CaE&m=J2gISPqaKCmyXt9KG9ql-YRWYOxVH48K5-DARZ0w8Q8-5vayCAbNTWMc14m8EDNz&s=BTMyxbUZfmCjmLZOf6ZC5rE2WNG3D8YkmXVMtfZEd9w&e= 
+
+## Build system
+### Environment
+Android Studio Chipmunk | 2021.2.1 Patch 1
+
+
+## Screenshots
+### Home Screen
+| <img src="screenshots/Home_List.png" width="200"/> | <img src="screenshots/Home_Card.png" width="200"/> | <img src="screenshots/Order_Menu.png" width="200"/> |
+|:---:|:---:|:---:|
+|Home List| Home Card List | Sort Menu|
+
+### Search & Details Screen
+| <img src="screenshots/Search.png" width="200"/>| <img src="screenshots/Details.png" width="200"/>|
+|:---:|:---:|
+| Search | Details |

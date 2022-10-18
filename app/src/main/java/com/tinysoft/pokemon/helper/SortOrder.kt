@@ -4,6 +4,9 @@ import androidx.annotation.IdRes
 import androidx.annotation.StringRes
 import com.tinysoft.pokemon.R
 
+/**
+ * Pokemon sort order entries.
+ */
 enum class SortOrder constructor(
     @param:StringRes @field:StringRes val titleRes: Int,
     @param:IdRes @field:IdRes val resId: Int,

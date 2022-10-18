@@ -10,6 +10,7 @@ class App : Application() {
         super.onCreate()
         instance = this
 
+        // start Koin
         startKoin {
             androidContext(this@App)
             modules(appModules)

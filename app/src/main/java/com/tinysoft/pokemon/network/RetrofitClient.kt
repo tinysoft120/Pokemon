@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit
 fun logInterceptor(): Interceptor {
     val loggingInterceptor = HttpLoggingInterceptor()
     if (BuildConfig.DEBUG) {
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
     } else {
         // disable retrofit log on release
         loggingInterceptor.level = HttpLoggingInterceptor.Level.NONE
